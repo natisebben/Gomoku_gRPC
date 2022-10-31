@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\GomokugRPCClient.exe
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\GomokugRPCClient.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\Grpc.Net.Client.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\Grpc.Net.Common.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.AssemblyInfo.cs
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.csproj.CopyComplete
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\refint\GomokugRPCClient.dll
+C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\obj\Debug\net6.0\GomokugRPCClient.pdb

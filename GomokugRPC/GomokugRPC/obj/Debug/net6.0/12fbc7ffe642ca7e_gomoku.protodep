@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/Gomoku.cs \
+obj\Debug\net6.0\Protos/GomokuGrpc.cs: Protos/gomoku.proto

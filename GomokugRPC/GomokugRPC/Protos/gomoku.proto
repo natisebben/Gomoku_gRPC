@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GomokugRPC";
+
+// The request play service definition.
+service Gomoku
+{
+	rpc WantToPlay(WantToPlayRequest) returns (WantToPlayReply);
+}
+
+message WantToPlayRequest {
+  string playerName = 1;
+  string play = 2;
+}
+
+message WantToPlayReply {
+  string board = 1;
+  string status = 2;
+}
