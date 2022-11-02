@@ -11,16 +11,22 @@ var status = string.Empty;
 do
 {
     var play = string.Empty;
-    if (string.IsNullOrEmpty(BoardStatus.Ready.ToString()))
+    if (status.Equals(BoardStatus.Ready.ToString()) ||
+        status.Equals(BoardStatus.New.ToString()))
     {
-        Console.WriteLine("Informe a jogada desejada:");
+        Console.WriteLine("Your turn: ");
         play = Console.ReadLine();
     }
 
     var reply = await client.WantToPlayAsync(new WantToPlayRequest { PlayerName = $"Player {playerName}", Play = play });
     status = reply.Status;
 
-    Console.Write($"{reply.Board} {reply.Status}");
+    if (status.Equals(BoardStatus.New.ToString()))
+    {
+        Console.WriteLine("A new match has started:\n");
+    }
+
+    Console.Write($"{reply.Board}\n");
 
 } while (!status.Equals(BoardStatus.Defeat.ToString()) && !status.Equals(BoardStatus.Victory.ToString()));
 
