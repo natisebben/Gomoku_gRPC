@@ -1,4 +1,4 @@
-﻿using Grpc.Core;
+using Grpc.Core;
 using System.Text;
 
 namespace GomokugRPC.Services
@@ -6,60 +6,70 @@ namespace GomokugRPC.Services
     public class GomokuService : Gomoku.GomokuBase
     {
         private readonly ILogger<GomokuService> _logger;
-        private Dictionary<Tuple<int, int>, PositionStatus> _board;
-        private string _playerOne, _playerTwo, _nextPlayerWaited;
+        private static Dictionary<Tuple<int, int>, PositionStatus> _board;
+        private static string _playerOne, _playerTwo, _nextPlayerWaited;
+        private static char[] _alphabet = new char[15] { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'};
+
 
         public GomokuService(ILogger<GomokuService> logger)
         {
             _logger = logger;
-            _playerOne = string.Empty;
-            _playerTwo = string.Empty;
-            _nextPlayerWaited = string.Empty;
         }
 
         public override Task<WantToPlayReply> WantToPlay(WantToPlayRequest request, ServerCallContext context)
         {
-            if (_board is null)
+            if (!string.IsNullOrEmpty(_nextPlayerWaited) && _nextPlayerWaited.Equals(request.PlayerName))
+            {
+                //validar a jogada e fazer a jogada
+                //trocar o player esperado para o 2, se existir
+                ValidPlay(request.Play);
+                CheckFinished();
+                return Task.FromResult(new WantToPlayReply
+                {
+                    Board = GetBoardString(),
+                    Status = "trocar para a resposta adequada pra essa situação " + request.Play
+                });
+            }
+            else if (_board is null)
             {
                 GenerateNewBoard();
                 _playerOne = request.PlayerName;
                 _nextPlayerWaited = _playerOne;
+
+                return Task.FromResult(new WantToPlayReply
+                {
+                    Board = GetBoardString(),
+                    Status = BoardStatus.New.ToString()
+                });
             }
-            else if (string.IsNullOrEmpty(_playerTwo))
+            else if (string.IsNullOrEmpty(_playerTwo ?? ""))
             {
                 _playerTwo = request.PlayerName;
                 _nextPlayerWaited = _playerTwo;
+
+                return Task.FromResult(new WantToPlayReply
+                {
+                    Board = GetBoardString(),
+                    Status = "trocar para a resposta certa pra essa situação " + request.Play
+                });
             }
-            else if (!request.PlayerName.Equals(_playerOne) && !request.PlayerName.Equals(_playerTwo))
+            else if (!request.PlayerName.Equals(_playerOne ?? "") && !request.PlayerName.Equals(_playerTwo ?? ""))
             {
+                //cada instancia do server controla apenas 1 partida entre 2 players por vez
                 return Task.FromResult(new WantToPlayReply
                 {
                     Board = string.Empty,
                     Status = "Busy server."
                 });
             }
-
-            if ((request.PlayerName.Equals(_playerOne) || request.PlayerName.Equals(_playerTwo)) && 
-                request.PlayerName.Equals(_nextPlayerWaited))
-            {
-                ValidPlay(request.Play);
-                CheckFinished();
-            }
-            else 
-            {
-                //esperar sua vez
+            else
+            {//esperar sua vez
                 return Task.FromResult(new WantToPlayReply
                 {
                     Board = string.Empty,
                     Status = BoardStatus.WaitingOtherPlayer.ToString()
                 });
             }
-
-            return Task.FromResult(new WantToPlayReply
-            {
-                Board = GetBoardString(),
-                Status = "status test responding to play " + request.Play
-            });
         }
 
         private Dictionary<Tuple<int, int>, PositionStatus> GenerateNewBoard()
@@ -81,10 +91,15 @@ namespace GomokugRPC.Services
 
             for (int line = 0; line < 15; line++)
             {
+                sb.Append($"{(line + 1).ToString().PadLeft(2)}");
                 for (int column = 0; column < 15; column++)
                 {
                     var position = _board.GetValueOrDefault(new Tuple<int, int>(line, column));
 
+                    if (line == 0)
+                    {
+                        sb.Append($"{_alphabet[column]}\n");
+                    }
                     switch (position)
                     {
                         case PositionStatus.PlayerOne:
@@ -93,11 +108,10 @@ namespace GomokugRPC.Services
                         case PositionStatus.PlayerTwo:
                             sb.Append("●");
                             break;
-                        default:
-                            sb.Append("*");//◙
+                        case PositionStatus.Available:
+                            sb.Append("*");
                             break;
                     }
-
                     if (column < 14)
                     {
                         sb.Append("-");
