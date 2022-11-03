@@ -16,4 +16,5 @@ message WantToPlayRequest {
 message WantToPlayReply {
   string board = 1;
   string status = 2;
+  string nextPlayerWaited = 3;
 }

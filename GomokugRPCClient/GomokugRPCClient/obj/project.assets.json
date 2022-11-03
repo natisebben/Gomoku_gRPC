@@ -292,19 +292,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\sebbna\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\GomokugRPCClient\\GomokugRPCClient\\GomokugRPCClient.csproj",
+      "projectUniqueName": "C:\\ReposUCS\\GomokugRPCClient\\GomokugRPCClient\\GomokugRPCClient.csproj",
       "projectName": "GomokugRPCClient",
-      "projectPath": "C:\\Users\\User\\source\\repos\\GomokugRPCClient\\GomokugRPCClient\\GomokugRPCClient.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\GomokugRPCClient\\GomokugRPCClient\\obj\\",
+      "projectPath": "C:\\ReposUCS\\GomokugRPCClient\\GomokugRPCClient\\GomokugRPCClient.csproj",
+      "packagesPath": "C:\\Users\\sebbna\\.nuget\\packages\\",
+      "outputPath": "C:\\ReposUCS\\GomokugRPCClient\\GomokugRPCClient\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sebbna\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -361,7 +361,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

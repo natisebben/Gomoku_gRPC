@@ -1,4 +1,4 @@
-﻿namespace GomokugRPC
+﻿namespace GomokugRPCClient
 {
     public enum BoardStatus
     {

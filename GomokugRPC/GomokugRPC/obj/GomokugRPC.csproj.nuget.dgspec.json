@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj": {}
+    "C:\\ReposUCS\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj": {
+    "C:\\ReposUCS\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj",
+        "projectUniqueName": "C:\\ReposUCS\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj",
         "projectName": "GomokugRPC",
-        "projectPath": "C:\\Users\\User\\source\\repos\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\GomokugRPC\\GomokugRPC\\obj\\",
+        "projectPath": "C:\\ReposUCS\\GomokugRPC\\GomokugRPC\\GomokugRPC.csproj",
+        "packagesPath": "C:\\Users\\sebbna\\.nuget\\packages\\",
+        "outputPath": "C:\\ReposUCS\\GomokugRPC\\GomokugRPC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebbna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

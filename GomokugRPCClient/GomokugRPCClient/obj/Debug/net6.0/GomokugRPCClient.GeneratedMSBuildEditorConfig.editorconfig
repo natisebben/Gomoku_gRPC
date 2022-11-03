@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GomokugRPCClient
-build_property.ProjectDir = C:\Users\User\source\repos\GomokugRPCClient\GomokugRPCClient\
+build_property.ProjectDir = C:\ReposUCS\GomokugRPCClient\GomokugRPCClient\

@@ -25,15 +25,16 @@ namespace GomokugRPCClient {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNQcm90b3MvZ29tb2t1LnByb3RvIjUKEVdhbnRUb1BsYXlSZXF1ZXN0EhIK",
-            "CnBsYXllck5hbWUYASABKAkSDAoEcGxheRgCIAEoCSIwCg9XYW50VG9QbGF5",
-            "UmVwbHkSDQoFYm9hcmQYASABKAkSDgoGc3RhdHVzGAIgASgJMjwKBkdvbW9r",
-            "dRIyCgpXYW50VG9QbGF5EhIuV2FudFRvUGxheVJlcXVlc3QaEC5XYW50VG9Q",
-            "bGF5UmVwbHlCE6oCEEdvbW9rdWdSUENDbGllbnRiBnByb3RvMw=="));
+            "CnBsYXllck5hbWUYASABKAkSDAoEcGxheRgCIAEoCSJKCg9XYW50VG9QbGF5",
+            "UmVwbHkSDQoFYm9hcmQYASABKAkSDgoGc3RhdHVzGAIgASgJEhgKEG5leHRQ",
+            "bGF5ZXJXYWl0ZWQYAyABKAkyPAoGR29tb2t1EjIKCldhbnRUb1BsYXkSEi5X",
+            "YW50VG9QbGF5UmVxdWVzdBoQLldhbnRUb1BsYXlSZXBseUITqgIQR29tb2t1",
+            "Z1JQQ0NsaWVudGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::GomokugRPCClient.WantToPlayRequest), global::GomokugRPCClient.WantToPlayRequest.Parser, new[]{ "PlayerName", "Play" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GomokugRPCClient.WantToPlayReply), global::GomokugRPCClient.WantToPlayReply.Parser, new[]{ "Board", "Status" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GomokugRPCClient.WantToPlayReply), global::GomokugRPCClient.WantToPlayReply.Parser, new[]{ "Board", "Status", "NextPlayerWaited" }, null, null, null, null)
           }));
     }
     #endregion
@@ -302,6 +303,7 @@ namespace GomokugRPCClient {
     public WantToPlayReply(WantToPlayReply other) : this() {
       board_ = other.board_;
       status_ = other.status_;
+      nextPlayerWaited_ = other.nextPlayerWaited_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -335,6 +337,18 @@ namespace GomokugRPCClient {
       }
     }
 
+    /// <summary>Field number for the "nextPlayerWaited" field.</summary>
+    public const int NextPlayerWaitedFieldNumber = 3;
+    private string nextPlayerWaited_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string NextPlayerWaited {
+      get { return nextPlayerWaited_; }
+      set {
+        nextPlayerWaited_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -352,6 +366,7 @@ namespace GomokugRPCClient {
       }
       if (Board != other.Board) return false;
       if (Status != other.Status) return false;
+      if (NextPlayerWaited != other.NextPlayerWaited) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -361,6 +376,7 @@ namespace GomokugRPCClient {
       int hash = 1;
       if (Board.Length != 0) hash ^= Board.GetHashCode();
       if (Status.Length != 0) hash ^= Status.GetHashCode();
+      if (NextPlayerWaited.Length != 0) hash ^= NextPlayerWaited.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -387,6 +403,10 @@ namespace GomokugRPCClient {
         output.WriteRawTag(18);
         output.WriteString(Status);
       }
+      if (NextPlayerWaited.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NextPlayerWaited);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -405,6 +425,10 @@ namespace GomokugRPCClient {
         output.WriteRawTag(18);
         output.WriteString(Status);
       }
+      if (NextPlayerWaited.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(NextPlayerWaited);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -420,6 +444,9 @@ namespace GomokugRPCClient {
       }
       if (Status.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
+      }
+      if (NextPlayerWaited.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(NextPlayerWaited);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -438,6 +465,9 @@ namespace GomokugRPCClient {
       }
       if (other.Status.Length != 0) {
         Status = other.Status;
+      }
+      if (other.NextPlayerWaited.Length != 0) {
+        NextPlayerWaited = other.NextPlayerWaited;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -462,6 +492,10 @@ namespace GomokugRPCClient {
             Status = input.ReadString();
             break;
           }
+          case 26: {
+            NextPlayerWaited = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -483,6 +517,10 @@ namespace GomokugRPCClient {
           }
           case 18: {
             Status = input.ReadString();
+            break;
+          }
+          case 26: {
+            NextPlayerWaited = input.ReadString();
             break;
           }
         }
